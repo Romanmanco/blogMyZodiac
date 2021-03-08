@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*@thymesVar id="title" type="com"*/-->
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="nameWindow" wfd-id="32">
+    <div class="col-sm-6" wfd-id="62">
+        <label for="firstName" class="form-label" wfd-id="64">Имя</label>
+        <input type="text" class="form-control" id="firstName" placeholder="" value="" required="" wfd-id="101">
+        <div class="invalid-feedback" wfd-id="63">
+            Поле имя обязательно для заполнения.
+        </div>
+    </div>
+
+    <div class="lastNameWindow" wfd-id="59">
+        <label for="lastName" class="form-label" wfd-id="61">Фамилия</label>
+        <input type="text" class="form-control" id="lastName" placeholder="" value="" required="" wfd-id="100">
+        <div class="invalid-feedback" wfd-id="60">
+            Поле фамилия обязательно для заполнения.
+        </div>
+    </div>
+
+    <div class="usernameWindow" wfd-id="54">
+        <label for="username" class="form-label" wfd-id="58">Придумайте имя пользователя</label>
+        <div class="input-group has-validation" wfd-id="55">
+            <span class="input-group-text" wfd-id="57">@</span>
+            <input type="text" class="form-control" id="username" placeholder="Username" required="" wfd-id="99">
+            <div class="invalid-feedback" wfd-id="56">
+                Придумайте имя пользователя.
+            </div>
+        </div>
+    </div>
+
+    <div class="emailWindow" wfd-id="50">
+        <label for="email" class="form-label" wfd-id="52">Ваш Email <span class="text-muted" wfd-id="53">(Optional)</span></label>
+        <input type="email" class="form-control" id="email" placeholder="you@example.com" wfd-id="98">
+        <div class="invalid-feedback" wfd-id="51">
+            Пожалуйста введите корректный email для регистрации.
+        </div>
+    </div>
+
+    <div class="addresWindow" wfd-id="47">
+        <label for="address" class="form-label" wfd-id="49">Домашний адрес</label>
+        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="" wfd-id="97">
+        <div class="invalid-feedback" wfd-id="48">
+            Please enter your shipping address.
+        </div>
+        <kpm-button class="_1mUok1yqu_fHkbNOXVoU6l kpm_address-button kpm_gray-key-icon" style="z-index: 3 !important;"><div class="_12GLdmNfqjBzgAQBymfRrk" style="width: 20px !important; height: 24px !important; top: -31px !important; left: 591.663px !important;" wfd-id="106"><svg class="_1jZ1QRhwRIXZDO2Rgp_qon" viewBox="25 25 50 50" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" style="inset: 0px -2px !important;"><circle cx="50" cy="50" r="20"></circle></svg></div><svg class="_2WQbmZpFI_2_k72D9o87Hq kpm_reset _2p2h7gYS-bpObPoQxR7lvo" width="12" height="24" viewBox="0 0 8 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 12px !important; height: 24px !important; top: -31px !important; left: 591.663px !important;"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 7.46487C7.1956 6.77325 8 5.48056 8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 5.48056 0.804397 6.77325 2 7.46487V9H3V10H2V12H3V13H2V14.5L4 16L6 14.5V7.46487ZM5 3C5 3.55228 4.55229 4 4 4C3.44772 4 3 3.55228 3 3C3 2.44772 3.44772 2 4 2C4.55229 2 5 2.44772 5 3ZM4 8H5V14H4V8Z"></path></svg></kpm-button></div>
+
+
+    <div class="countryWindow" wfd-id="40">
+        <label for="country" class="form-label" wfd-id="43">Country</label>
+        <select class="form-select" id="country" required="" wfd-id="42">
+            <option value="">Выбирите страну...</option>
+            <option>Российская Федерация</option>
+            <option>United kingdom</option>
+            <option>United States</option>
+            <option>China</option>
+        </select>
+        <button type="button" ><a href="/addCountry">Добавить страну</a></button>
+        <div class="invalid-feedback" wfd-id="41">
+            Пожалуйста выбирите действительную страну.
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

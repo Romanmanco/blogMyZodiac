@@ -8,7 +8,7 @@
 <body>
     <header>
         <div class="headerTopRow" >
-            <div class="descriptionAndContacts">
+            <div class="descriptionAndContacts" id="123">
                 <div class="aboutUs">
                     <h4 class="text-white">О нас</h4>
                     <p class="text-muted">Мы работаем с лучшими астрологами России и СНГ. Узнаете Ваш астрологический прогноз прямо сейчас.
@@ -27,21 +27,23 @@
         </div>
         <div class="logoTop">
             <div class="logoContainer">
-                <a href="#" class="logo"></a>
-                <h4 class="text-white">Гороскоп</h4>
-                <button class="menuButton"><span class="menu"></span></button>
+                <span class="logoWithContainer">
+                    <a href="#" class="logo" ></a>
+                    <h4 class="text-white">Гороскоп</h4>
+                </span>
+                <button class="menuButton" ><span class="menu"></span></button>
             </div>
         </div>
     </header>
     <main>
         <section class="centerContainer">
-            <div class="row py-lg-5">
+            <div class="essential">
                 <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Кто ты по восточному гороскопу ?</h1>
-                    <p class="lead text-muted">Заполните простую форму для того чтобы узнать свой знак зодиака.</p>
+                    <h1 class="question">Кто ты по восточному гороскопу ?</h1>
+                    <p class="text">Заполните простую форму для того чтобы узнать свой знак зодиака. Наши специалисты работают над созданием астрологических карт и помогают с толкованием снов.</p>
                     <p>
-                        <a href="/registrationPage" class="btn btn-primary my-2">Записаться на платную консультацию</a>
-                        <a href="/viewGoroskopPage" class="btn btn-secondary my-2">Попробовать бесплатную версию</a>
+                        <a href="/registrationPage" class="btnPrimary">Записаться на платную консультацию</a>
+                        <a href="/viewGoroskopPage" class="btnSecondary">Попробовать бесплатную версию</a>
                     </p>
                 </div>
             </div>

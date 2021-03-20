@@ -10,19 +10,19 @@ public class MainController {
 
     @GetMapping("/")
     public String homePage(Model model) {
-        model.addAttribute("title", "Узнай свой знак зодиака");
+        model.addAttribute("title", "Главная страница");
         return "homePage";
     }
 
     @GetMapping( "/registrationPage")
     public String registrationPage(Model model){
-        model.addAttribute("title", "Узнай свой знак зодиака");
+        model.addAttribute("title", "Регистрация на сайте");
         return "registrationPage";
     }
 
     @GetMapping( "/viewGoroskopPage")
     public String viewGoroskopPage(Model model){
-        model.addAttribute("title", "Узнай свой знак зодиака");
+        model.addAttribute("title", "Узнай свой гороскоп");
         return "viewGoroskopPage";
     }
 

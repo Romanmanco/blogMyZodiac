@@ -1,0 +1,30 @@
+<div th:fragment="header">
+    <div class="headerTopRow" >
+        <div class="descriptionAndContacts" id="123">
+            <div class="aboutUs">
+                <h4 class="text-white">О нас</h4>
+                <p class="text-muted">Мы работаем с лучшими астрологами России и СНГ. Узнаете Ваш астрологический прогноз прямо сейчас.
+                    получите бесплатную консультаию астролога онлайн!
+                </p>
+            </div>
+            <div class="contacts">
+                <h4 class="text-white">Контакты</h4>
+                <ul class="list-contacts" >
+                    <li><a href="#" class="text-contacts">Follow on Twitter</a></li>
+                    <li><a href="#" class="text-contacts">Like on Facebook</a></li>
+                    <li><a href="#" class="text-contacts">Email me</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="logoTop">
+        <div class="logoContainer">
+                <span class="logoWithContainer">
+                    <a href="/" class="logo" ></a>
+                    <h4 class="text-white" >Гороскоп</h4>
+                </span>
+            <button class="menuButton"  id="example_2_1" onclick="document.getElementById('123').style.display='flex'; document.getElementById('example_2_1').style.display='none'; document.getElementById('example_2_2').style.display='flex';" style="display:none;"><span class="menu"></span></button>
+            <button class="menuButton" id="example_2_2" onclick=" document.getElementById('123').style.display='none'; document.getElementById('example_2_2').style.display='none'; document.getElementById('example_2_1').style.display='block';"><span class="menu"></span></button>
+        </div>
+    </div>
+</div>

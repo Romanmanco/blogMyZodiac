@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <title>Название документа</title>
+    <!--/*@thymesVar id="title" type=""*/-->
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
     <style>
         #okno {
             width: 300px;
@@ -34,8 +38,7 @@
         }
         .close:hover {background: #e6e6ff;}
     </style>
-</head>
-
+</body>
 <body>
 
 <div id="okno">

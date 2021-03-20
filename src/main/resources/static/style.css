@@ -27,13 +27,13 @@ a:hover{
     padding: 0;
 }
 .descriptionAndContacts{
-    display: flex;
-    align-items: flex-start;
+    display: none;
+    align-items: center;
     flex-wrap: nowrap;
     justify-content: center;
     height: 152px;
-
 }
+
 .aboutUs{
     padding-top: 1.5rem!important;
     padding-bottom: 1.5rem!important;
@@ -46,6 +46,7 @@ a:hover{
     min-width: auto;
     max-height: 152px;
 }
+
 .text-white{
     color: #FFFFFF;
     font-size: 1.5rem;
@@ -54,6 +55,7 @@ a:hover{
     font-weight: 500;
     line-height: 1.2;
 }
+
 .text-muted{
     margin-top: 0;
     margin-bottom: 1rem;
@@ -62,12 +64,14 @@ a:hover{
     font-weight: 400;
     line-height: 1.5;
 }
+
 .list-contacts{
     text-decoration: none;
     list-style-type: none;
     padding-left: 0px;
     font-size: 1rem!important;
 }
+
 .text-contacts{
     color: #FFFFFF;
     font-size: 1rem;
@@ -76,6 +80,7 @@ a:hover{
     font-weight: 500;
     line-height: 1.2;
 }
+
 .contacts{
     padding-top: 1.5rem!important;
     padding-bottom: 1.5rem!important;
@@ -89,12 +94,14 @@ a:hover{
     min-width: auto;
     max-height: 152px;
 }
+
 .logoTop{
     background-color: #212529;
     position: center;
     justify-content: center;
     height: 62px;
 }
+
 .logoContainer{
     position: relative;
     display: flex;
@@ -117,6 +124,7 @@ a:hover{
     border-radius: .25rem;
     align-items: center;
 }
+
 .menu::after {
     display: flex;
     justify-content: center;
@@ -126,6 +134,7 @@ a:hover{
     border-top: 3px solid #6c757d;
     border-bottom: 3px solid #6c757d;
 }
+
 .menu::before {
     display: flex;
     justify-content: center;
@@ -134,6 +143,7 @@ a:hover{
     width: 25px;
     border-top: 3px solid #6c757d;
 }
+
 .menuButton{
     cursor:pointer;
     display:inline-block;
@@ -144,6 +154,7 @@ a:hover{
     border-color: #6c757d;
     align-items: center;
 }
+
 .logo{
     height: 62px;
     width: 62px;
@@ -152,11 +163,13 @@ a:hover{
     display: inline-block;
     padding-inline: 15px;
 }
+
 .logoWithContainer{
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
+
 .centerContainer{
     display: flex;
     justify-content: center;
@@ -173,16 +186,16 @@ a:hover{
     padding-inline: 12px;
     padding-top: 48px;
     padding-bottom: 48px;
-
 }
+
 .question{
     font-size: calc(1.375rem + 1.5vw);
     font-weight: 300!important;
     margin-top: 0;
     margin-bottom: .5rem;
     line-height: 1.2;
-
 }
+
 .text{
     font-size: 1rem;
     font-weight: 300;
@@ -192,8 +205,8 @@ a:hover{
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     color: #6c757d!important;
-
 }
+
 .btnPrimary{
     color: #fff;
     background-color: #0d6efd;
@@ -214,6 +227,7 @@ a:hover{
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
 .btnPrimary:hover{
     box-sizing: border-box;
     background-color: #0647d4;

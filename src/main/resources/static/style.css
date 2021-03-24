@@ -278,6 +278,8 @@ a:hover{
     font-size: 1rem;
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
 .btnBackOnTop:hover{
@@ -285,7 +287,7 @@ a:hover{
     background-color: #40444c;
 }
 
-.text-mute {
+.text-mute{
     border-top: 3px solid #212529;
     display: flex;
     flex-flow: nowrap;
@@ -297,6 +299,29 @@ a:hover{
     margin-left: 296px;
     margin-right: 296px;
     color: #6c757d!important;
+}
+
+.containerFooter{
+    flex-flow: column;
+}
+
+.containerReg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: #212529;
+    box-sizing: border-box;
+    text-align: center!important;
+    margin-right: 285px;
+    margin-left: 285px;
+    padding-inline: 12px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
 }
 
 

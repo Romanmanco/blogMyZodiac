@@ -13,17 +13,22 @@ public class MainController {
         model.addAttribute("title", "Главная страница");
         return "homePage";
     }
-
-    @GetMapping( "/registrationPage")
-    public String registrationPage(Model model){
-        model.addAttribute("title", "Регистрация на сайте");
-        return "registrationPage";
+    @GetMapping( "/registrarionPage")
+    public String registrarionPage(Model model){
+        model.addAttribute("title", "Регистрация");
+        return "registrarionPage";
     }
 
     @GetMapping( "/viewGoroskopPage")
     public String viewGoroskopPage(Model model){
         model.addAttribute("title", "Узнай свой гороскоп");
         return "viewGoroskopPage";
+    }
+
+    @GetMapping( "/profilePage")
+    public String profilePage(Model model){
+        model.addAttribute("title", "Личный кабинет");
+        return "profilePage";
     }
 
 

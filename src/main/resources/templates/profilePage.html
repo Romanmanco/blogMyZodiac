@@ -8,18 +8,18 @@
 </head>
 <body>
     <header th:insert="blocks/header :: header"></header>
-        <section class="containerReg">
+        <section class="centerContainer">
             <div class="nameWindow" >
                 <div class="col-sm-6" >
-                    <label for="firstName" class="form-label" >Имя</label>
+                    <label for="firstName" class="form-label" ></label>
                     <input type="text" class="form-control" id="firstName" placeholder="Имя" value="" required="" >
-                    <div class="invalid-feedback" >
-                        Поле имя обязательно для заполнения.
-                    </div>
+<!--                    <div class="invalid-feedback" >-->
+<!--                        Поле имя обязательно для заполнения.-->
+<!--                    </div>-->
                 </div>
 
                 <div class="lastNameWindow" >
-                    <label for="lastName" class="form-label" >Фамилия</label>
+                    <label for="lastName" class="form-label" ></label>
                     <input type="text" class="form-control" id="lastName" placeholder="Фамилия" value="" required="" >
 <!--                    <div class="invalid-feedback" >-->
 <!--                        Поле фамилия обязательно для заполнения.-->
@@ -37,8 +37,8 @@
                     </div>
                 </div>
                 <div class="emailWindow" >
-                    <label for="email" class="form-label" >Ваш Email <span class="text-muted" >(Optional)</span></label>
-                    <input type="email" class="form-control" id="email" placeholder="Ваш @ емейл" >
+                    <label for="email" class="form-label" >Ваш Email <span class="text-muted" ></span></label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" >
 <!--                    <div class="invalid-feedback" >-->
 <!--                        Пожалуйста введите корректный email для регистрации.-->
 <!--                    </div>-->
@@ -59,7 +59,7 @@
                             <option>United States</option>
                             <option>China</option>
                         </select>
-                        <button type="button" ><a href="/addCountry">Добавить страну</a></button>
+                        <button class="btnPrimary" ><a href="/addCountry" >Добавить страну</a></button>
 <!--                        <div class="invalid-feedback" >-->
 <!--                            Пожалуйста выбирите действительную страну.-->
 <!--                        </div>-->

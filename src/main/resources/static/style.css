@@ -1,17 +1,8 @@
-.container{
-    max-width: 1280px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-}
 .p{
     margin-top: 0;
     margin-bottom: 1rem;
 }
+
 a:hover{
     text-decoration: none;
 }
@@ -158,10 +149,13 @@ a:hover{
 .logo{
     height: 62px;
     width: 62px;
-    background-image: url("imj/logo.png");
+    background-image: url("img/logo.png");
+    background-color: #212529;
     background-repeat: no-repeat;
     display: inline-block;
-    padding-inline: 15px;
+    border: 1px solid #212529;
+    border-radius: 40px 40px 40px 40px;
+
 }
 
 .logoWithContainer{
@@ -303,6 +297,7 @@ a:hover{
 
 .containerFooter{
     flex-flow: column;
+    padding-top: 5px;
 }
 
 .containerReg{
@@ -311,7 +306,6 @@ a:hover{
     align-items: center;
     font-size: 1rem;
     font-weight: 400;
-    font-family: sans-serif;
     line-height: 1.5;
     color: #212529;
     box-sizing: border-box;
@@ -323,6 +317,95 @@ a:hover{
     padding-bottom: 48px;
 
 }
+
+.content{
+    height: 624px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: nowrap;
+    margin-bottom: 124px;
+}
+
+.card1{
+    padding-top: 16px;
+    margin-right: 8px;
+    margin-left: 8px;
+    max-width: 524px;
+    max-height: 564px;
+    border: 3px solid #d0d4d6;
+}
+
+.card2{
+    padding-top: 16px;
+    margin-right: 8px;
+    margin-left: 8px;
+    max-width: 524px;
+    max-height: 564px;
+    border: 3px solid #d0d4d6;
+}
+
+.imgRight{
+    margin: 5px;
+    height: 503px;
+    width: 503px;
+    background-image: url("img/vostok.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding-inline: 15px;
+}
+
+.imgLeft{
+    margin: 5px;
+    height: 503px;
+    width: 503px;
+    background-image: url("img/zodiac.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding-inline: 15px;
+}
+
+.cardText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: #212529;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.containerText{
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 1.5;
+    margin-top: 16px;
+    margin-bottom: 124px;
+    margin-left: 296px;
+    margin-right: 296px;
+    width: auto;
+}
+
+.formSignin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 1.5;
+    margin-top: 16px;
+    margin-bottom: 124px;
+    margin-left: 296px;
+    margin-right: 296px;
+    width: auto;
+}
+
+
 
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <!--/*@thymesVar id="title" type="com"*/-->
     <title th:text="${title}"/>
@@ -10,63 +10,58 @@
     <header th:insert="blocks/header :: header"></header>
         <section class="centerContainer">
             <div class="nameWindow" >
-                <div class="col-sm-6" >
-                    <label for="firstName" class="form-label" ></label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Имя" value="" required="" >
-<!--                    <div class="invalid-feedback" >-->
-<!--                        Поле имя обязательно для заполнения.-->
-<!--                    </div>-->
-                </div>
-
-                <div class="lastNameWindow" >
-                    <label for="lastName" class="form-label" ></label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Фамилия" value="" required="" >
-<!--                    <div class="invalid-feedback" >-->
-<!--                        Поле фамилия обязательно для заполнения.-->
-<!--                    </div>-->
-                </div>
-
-                <div class="usernameWindow" >
-                    <label for="username" class="form-label" >Придумайте имя пользователя</label>
-                    <div class="input-group has-validation" >
-                        <span class="input-group-text" >@</span>
-                        <input type="text" class="form-control" id="username" placeholder="Логин" required="" >
-<!--                        <div class="invalid-feedback" >-->
-<!--                            Придумайте имя пользователя.-->
-<!--                        </div>-->
+                <form action="/addPerson">
+                    <div class="firstNameWindow" >
+                        <label for="firstName" class="form-label" ></label>
+                        <input type="text" name="firstNameParam" class="form-control" id="firstName" placeholder="Имя" value="" required="" >
                     </div>
-                </div>
-                <div class="emailWindow" >
-                    <label for="email" class="form-label" >Ваш Email <span class="text-muted" ></span></label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com" >
-<!--                    <div class="invalid-feedback" >-->
-<!--                        Пожалуйста введите корректный email для регистрации.-->
-<!--                    </div>-->
-                </div>
-
-                <div class="addresWindow" >
-                    <label for="address" class="form-label" >Домашний адрес</label>
-                    <input type="text" class="form-control" id="address" placeholder="ул. Пушкина 302 кв. 2" required="" >
-<!--                    <div class="invalid-feedback" >-->
-<!--                        Пожалуйста введите адрес.-->
-<!--                    </div>-->
-                    <div class="countryWindow" >
-                        <label for="country" class="form-label" >Страна</label>
-                        <select class="form-select" id="country" required="" >
-                            <option value="">Выбирите страну...</option>
-                            <option>Российская Федерация</option>
-                            <option>United kingdom</option>
-                            <option>United States</option>
-                            <option>China</option>
-                        </select>
-                        <button class="btnPrimary" ><a href="/addCountry" >Добавить страну</a></button>
-<!--                        <div class="invalid-feedback" >-->
-<!--                            Пожалуйста выбирите действительную страну.-->
-<!--                        </div>-->
+                    <div class="lastNameWindow" >
+                        <label for="lastName" class="form-label" ></label>
+                        <input type="text"  name="lastNameParam" class="form-control" id="lastName" placeholder="Фамилия" value="" required="" >
                     </div>
-                </div>
+                    <div class="usernameWindow" >
+                        <label for="username" class="form-label" >Придумайте имя пользователя</label>
+                        <div class="input-group has-validation" >
+                            <span class="input-group-text" >@</span>
+                            <input type="text" name="loginParam" class="form-control" id="username" placeholder="Логин" required="" >
+                        </div>
+                    </div>
+                    <div class="emailWindow" >
+                        <label for="email" class="form-label" >Ваш Email <span class="text-muted" ></span></label>
+                        <input type="email" name="emailParam" class="form-control" id="email" placeholder="name@example.com" >
+                    </div>
+                    <div class="addresWindow" >
+                        <label for="address" class="form-label" >Домашний адрес</label>
+                        <input type="text" name="addressParam" class="form-control" id="address" placeholder="ул. Пушкина 302 кв. 2" required="" >
+                        <div class="countryWindow" >
+                            <label for="country" class="form-label" >Страна</label>
+                            <select class="form-select" id="country" required="" >
+                                <option value="">Выбирите страну...</option>
+                                <option>Российская Федерация</option>
+                                <option>United kingdom</option>
+                                <option>United States</option>
+                                <option>China</option>
+                            </select>
+                            <button class="btnSecondary"  id="example_3_1" onclick="document.getElementById('111').style.display='flex'; document.getElementById('example_3_1').style.display='none'; document.getElementById('example_3_2').style.display='flex';" style="display:none;">Добавить страну</button>
+                            <button class="btnSecondary" id="example_3_2" onclick=" document.getElementById('111').style.display='none'; document.getElementById('example_3_2').style.display='none'; document.getElementById('example_3_1').style.display='block';" style="display: flex;">Добавить страну</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </section>
+        <div class="countrys" id ="111">
+            <p class="text">Введите название вашей страны</p>
+            <div style="display: inline-block">
+                <form action="/addCountry" method="post" >
+                <input type="text" name="nameCountry" placeholder="Название страны"label></input>
+                <button class="save" type="submit" >Сохранить</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="personBtn">
+            <a href="/addPerson" ><button class="btnPrimary" >Сохранить данные</button></a>
+        </div>
     <footer th:insert="blocks/footer :: footer"></footer>
 </body>
 </html>

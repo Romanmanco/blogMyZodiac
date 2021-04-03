@@ -6,8 +6,9 @@ import javax.persistence.Id;
 
 @Entity
 public class Country {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
 

@@ -32,7 +32,7 @@ public class CountryController {
                              Model model) {
         Country country = new Country(nameCountry);
         countryRepo.save(country);
-        return "redirect:/countries";
+        return "redirect:/viewGoroskopPage";
     }
 
     @GetMapping( "/addCountryView")

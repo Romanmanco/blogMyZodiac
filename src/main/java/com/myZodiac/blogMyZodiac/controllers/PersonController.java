@@ -17,10 +17,10 @@ public class PersonController {
     @Autowired
     PersonRepo personRepo;
 
-//    @GetMapping("/profilePage")
-//    public String profilePage (Model model){
-//        return "/profilePage";
-//    }
+    @GetMapping("/profilePage")
+    public String profilePage (Model model){
+        return "/profilePage";
+    }
 
     @GetMapping("/getPersons")
     public String getPersons() {

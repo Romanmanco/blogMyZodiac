@@ -35,11 +35,6 @@ public class MainController {
         return "viewGoroskopPage";
     }
 
-//    @GetMapping( "/profilePage")
-//    public String profilePage(Model model){
-//        model.addAttribute("title", "Личный кабинет");
-//        return "profilePage";
-//    }
 
 
 

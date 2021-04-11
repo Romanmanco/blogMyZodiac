@@ -19,7 +19,6 @@ public class CountryController {
 
     @GetMapping("/countries")
     public String getCountryTable(Model model) {
-        //получили все записи из таблицы Person и положили в коллекцию
         List<Country> countryList = countryRepo.findAll();
         //добавили коллекцию в модель
         model.addAttribute("country", countryList);

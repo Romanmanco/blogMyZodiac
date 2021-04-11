@@ -184,8 +184,21 @@ a:hover{
 
 .question{
     font-size: calc(1.375rem + 1.5vw);
+    font-family: sans-serif;
     font-weight: 300!important;
     margin-top: 0;
+    margin-bottom: .5rem;
+    line-height: 1.2;
+}
+
+.titleText{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1rem + 1.5vw);
+    font-family: sans-serif;
+    font-weight: 300!important;
+    margin-top: 15px;
     margin-bottom: .5rem;
     line-height: 1.2;
 }
@@ -249,11 +262,6 @@ a:hover{
     text-decoration: none;
 }
 
-/*.btnSecondary:hover{*/
-/*    box-sizing: border-box;*/
-/*    background-color: #40444c;*/
-/*}*/
-
 .btnBackOnTop{
     color: #fff;
     background-color: #5c636a;
@@ -286,13 +294,11 @@ a:hover{
     border-top: 3px solid #212529;
     display: flex;
     flex-flow: nowrap;
-    align-items: center;
+    align-items: flex-end;
     align-content: center;
     justify-content: center;
     max-height: 82px;
     font-family: sans-serif;
-    margin-left: 296px;
-    margin-right: 296px;
     color: #6c757d!important;
 }
 
@@ -458,6 +464,55 @@ a:hover{
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     text-decoration: none;
+}
+
+.blogContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 456px;
+}
+
+.blog{
+    color: #FFFFFF!important;
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-left: 26px;
+}
+
+.alert{
+    margin-top: 2px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center!important;
+    margin-left: 285px;
+    margin-right: 285px;
+
+}
+
+.formAddPost{
+    width: 100%;
+    height: auto;
+    min-height: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: sans-serif;
+    color: #212529;
+}
+.formAddText{
+    width: 100%;
+    min-height: 125px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: sans-serif;
+    color: #212529;
 }
 
 

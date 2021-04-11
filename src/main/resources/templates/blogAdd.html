@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container">
+    <h1 class="titleText">Добавление статьи</h1>
+    <form action="/blogAdd" method="post" class="formAddPost">
+        <input type="text" name="title" placeholder="Введите название статьи" class="formAddPost">
+        <input type="text" name="anons" placeholder="Введите анонс статьи" class="formAddPost">
+        <textarea type="text" name="full_text" placeholder="Введите текст статьи" class="formAddText"></textarea>
+        <button type="submit" class="save">Добавить статью</button>
+    </form>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+</body>
+</html>

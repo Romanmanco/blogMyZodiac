@@ -201,6 +201,8 @@ a:hover{
     margin-top: 15px;
     margin-bottom: .5rem;
     line-height: 1.2;
+    margin-left: 296px;
+    margin-right: 296px;
 }
 
 .text{
@@ -484,6 +486,7 @@ a:hover{
 
 .alert{
     margin-top: 2px;
+    margin-bottom: 5px;
 }
 
 .container{
@@ -504,6 +507,10 @@ a:hover{
     text-align: center!important;
     margin-left: 285px;
     margin-right: 285px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #abd3fa;
+    border-radius: .25rem;
 
 }
 

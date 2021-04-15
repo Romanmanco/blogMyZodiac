@@ -8,8 +8,8 @@
 <body>
 <header th:insert="blocks/header :: header"></header>
 
+<h1 class="titleText">Блог сайта</h1>
 <div class="containerPosts">
-    <h1 class="titleText">Блог сайта</h1>
     <div th:each="el : ${posts}" class="alert">
         <h3 th:text="${el.title}"></h3>
         <p th:text="${el.anons}"></p>

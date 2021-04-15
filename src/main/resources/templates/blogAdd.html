@@ -1,15 +1,15 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${title}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="http://localhost:8080/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
 
+<h1 class="titleText">Добавление статьи</h1>
+
 <div class="container">
-    <h1 class="titleText">Добавление статьи</h1>
     <form action="/blogAdd" method="post" class="formAddPost">
         <input type="text" name="title" placeholder="Введите название статьи" class="formAddPost">
         <input type="text" name="anons" placeholder="Введите анонс статьи" class="formAddPost">

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${title}"></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--  <link rel="stylesheet" href="style.css" type="text/css">-->
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="containerPosts">
+    <div th:each="el : ${post}" class="alert">
+        <h3 th:text="${el.title}"></h3>
+        <p th:text="${el.full_text}"></p>
+        <p th:text="${el.views}"></p>
+        <a th:href="'/blog/'+${el.id} + '/edit'" class="btnPrimary">Редактировать</a>
+        <a th:href="'/blog/'+${el.id}+ '/remove'" class="btnSecondary">Удалить</a>
+    </div>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+</body>
+</html>

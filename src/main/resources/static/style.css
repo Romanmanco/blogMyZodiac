@@ -496,6 +496,16 @@ a:hover{
     margin-right: 285px;
 
 }
+.containerPosts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center!important;
+    margin-left: 285px;
+    margin-right: 285px;
+
+}
 
 .formAddPost{
     width: 100%;

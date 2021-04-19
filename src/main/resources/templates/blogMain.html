@@ -10,7 +10,7 @@
 
 <h1 class="titleText">Блог сайта</h1>
 <div class="containerPosts">
-    <div th:each="el : ${posts}" class="alert">
+    <div th:each="el : ${posts}" class="alert"><br>
         <h3 th:text="${el.title}"></h3>
         <p th:text="${el.anons}"></p>
         <a th:href="'/blog/'+${el.id}" class="btnPrimary">Детальнее</a>

@@ -487,6 +487,8 @@ a:hover{
 .alert{
     margin-top: 2px;
     margin-bottom: 5px;
+    /*border-bottom: 5px #f7fffc solid;*/
+    /*width: 100%;*/
 }
 
 .container{

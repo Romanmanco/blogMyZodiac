@@ -9,11 +9,11 @@
 
 <div class="containerPosts">
     <div th:each="el : ${post}" class="alert">
-        <h3 th:text="${el.title}"></h3>
-        <p th:text="${el.full_text}"></p>
-        <p><b>Просмотры: </b><span th:text="${el.views}"/></p>
-        <a th:href="'/blog/'+${el.id} + '/edit'" class="btnPrimary">Редактировать</a>
-        <form th:action="'/blog/' +  ${el.id} + '/remove'" method="post">
+        <h3 th:text="${post.title}"></h3>
+        <p th:text="${post.fullText}"></p>
+        <p><b>Просмотры: </b><span th:text="${post.views}"/></p>
+        <a th:href="'/blog/'+${post.id} + '/edit'" class="btnPrimary">Редактировать</a>
+        <form th:action="'/blog/' +  ${post.id} + '/remove'" method="post">
             <button type="submit" class="btnSecondary">Удалить</button>
         </form>
     </div>

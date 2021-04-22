@@ -1,7 +1,9 @@
 package com.myZodiac.blogMyZodiac.controllers;
 
+import com.myZodiac.blogMyZodiac.dto.PostDTO;
 import com.myZodiac.blogMyZodiac.model.Post;
 import com.myZodiac.blogMyZodiac.repo.PostRepo;
+import com.myZodiac.blogMyZodiac.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -19,6 +22,9 @@ public class BlogController {
 
     @Autowired
     private PostRepo postRepo;
+
+    @Autowired
+    private PostService postService;
 
     @GetMapping("/blog")
     public String blog(Model model){
@@ -37,9 +43,9 @@ public class BlogController {
     @PostMapping("/blogAdd")
     public String blogPostAdd(@RequestParam String title,
                               @RequestParam String anons,
-                              @RequestParam String full_text,
+                              @RequestParam String fullText,
                               Model model){
-        Post post = new Post(title, anons, full_text);
+        Post post = new Post(title, anons, fullText);
         postRepo.save(post);
         return "redirect:/blog";
     }
@@ -57,14 +63,11 @@ public class BlogController {
     }
 
     @GetMapping("/blog/{id}/edit")
-    public String blogEdit(@PathVariable(value = "id") long postId, Model model){
-        if(!postRepo.existsById(postId)){
+    public String blogEdit(@PathVariable(value = "id") long postId, Model model) throws Exception {
+        if (!postService.postByIdIsPresent(postId)) {
             return "redirect:/blog";
         }
-        Optional<Post> post = postRepo.findById(postId);
-        ArrayList<Post> result = new ArrayList<>();
-        post.ifPresent(result::add);
-        model.addAttribute("post", result);
+        model.addAttribute("post", postService.getPostDtoById(postId));
         return "blogEdit";
     }
 
@@ -72,12 +75,12 @@ public class BlogController {
     public String blogPostUpdate(@PathVariable(value = "id") long postId,
                                  @RequestParam String title,
                                  @RequestParam String anons,
-                                 @RequestParam String full_text,
+                                 @RequestParam String fullText,
                                  Model model){
         Post post = postRepo.findById(postId).orElseThrow();
         post.setTitle(title);
         post.setAnons(anons);
-        post.setFull_text(full_text);
+        post.setFullText(fullText);
         postRepo.save(post);
 
         return "redirect:/blog";
@@ -92,3 +95,6 @@ public class BlogController {
     }
 
 }
+//todo прочитать про паттерн DTO
+//todo прочитать про паттерн facade
+//todo кастомизация ошибок

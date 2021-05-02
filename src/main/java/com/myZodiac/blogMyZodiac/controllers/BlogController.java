@@ -1,6 +1,5 @@
 package com.myZodiac.blogMyZodiac.controllers;
 
-import com.myZodiac.blogMyZodiac.dto.PostDTO;
 import com.myZodiac.blogMyZodiac.model.Post;
 import com.myZodiac.blogMyZodiac.repo.PostRepo;
 import com.myZodiac.blogMyZodiac.service.PostService;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 
@@ -55,10 +53,9 @@ public class BlogController {
         if(!postRepo.existsById(postId)){
             return "redirect:/blog";
         }
-        Optional<Post> post = postRepo.findById(postId);
-        ArrayList<Post> result = new ArrayList<>();
-        post.ifPresent(result::add);
-        model.addAttribute("post", result);
+        Optional<Post> postOpt = postRepo.findById(postId);
+        Post post = postOpt.get();
+        model.addAttribute("post", post);
         return "blogDetails";
     }
 

@@ -10,11 +10,11 @@
 <h1 class="titleText">Редактирование статьи</h1>
 
 <div class="container">
-    <div th:each="el : ${post}">
+    <div>
         <form method="post" class="formAddPost">
-            <input type="text" th:value="${el.title}" name="title" placeholder="Введите название статьи" class="formAddPost">
-            <input type="text" th:value="${el.anons}" name="anons" placeholder="Введите анонс статьи" class="formAddPost">
-            <textarea name="full_text" placeholder="Введите текст статьи" class="formAddText" th:text="${el.full_text}"/>
+            <input type="text" th:value="${post.title}" name="title" placeholder="Введите название статьи" class="formAddPost">
+            <input type="text" th:value="${post.anons}" name="anons" placeholder="Введите анонс статьи" class="formAddPost">
+            <textarea name="fullText" placeholder="Введите текст статьи" class="formAddText" th:text="${post.fullText}"/>
             <button type="submit" class="save">Обновить статью</button>
         </form>
     </div>

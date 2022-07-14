@@ -14,11 +14,13 @@ public class MainController {
         model.addAttribute("title", "Главная страница");
         return "homePage";
     }
+
     @GetMapping( "/eastGoroskopPage")
     public String eastGoroskopPage(Model model){
         model.addAttribute("title", "Восточный гороскоп");
         return "eastGoroskopPage";
     }
+
     @GetMapping( "/zodiacGoroskopPage")
     public String zodiacGoroskopPage(Model model){
         model.addAttribute("title", "Зодиакальный гороскоп");

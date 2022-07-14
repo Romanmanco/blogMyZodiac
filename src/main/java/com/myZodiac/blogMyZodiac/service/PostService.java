@@ -24,7 +24,7 @@ public class PostService {
             Post post = optionalPost.get();
             PostDTO postDTO = entity2dto(post);
             return postDTO;
-        }else {
+        } else {
             throw new Exception("post by id not found");
         }
     }

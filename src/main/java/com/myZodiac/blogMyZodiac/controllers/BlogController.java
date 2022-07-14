@@ -25,7 +25,7 @@ public class BlogController {
     private PostService postService;
 
     @GetMapping("/blog")
-    public String blog(Model model){
+    public String blog(Model model) {
         Iterable<Post> posts = postRepo.findAll();
         //добавили коллекцию в модель
         model.addAttribute("posts", posts);
@@ -34,7 +34,7 @@ public class BlogController {
     }
 
     @GetMapping("/blogAdd")
-    public String blogAdd(Model model){
+    public String blogAdd(Model model) {
         return "blogAdd";
     }
 
@@ -49,7 +49,7 @@ public class BlogController {
     }
 
     @GetMapping("/blog/{id}")
-    public String blogDetails(@PathVariable(value = "id") long postId, Model model){
+    public String blogDetails(@PathVariable(value = "id") long postId, Model model) {
         if(!postRepo.existsById(postId)){
             return "redirect:/blog";
         }
@@ -73,7 +73,7 @@ public class BlogController {
                                  @RequestParam String title,
                                  @RequestParam String anons,
                                  @RequestParam String fullText,
-                                 Model model){
+                                 Model model) {
         Post post = postRepo.findById(postId).orElseThrow();
         post.setTitle(title);
         post.setAnons(anons);
@@ -84,7 +84,7 @@ public class BlogController {
     }
 
     @PostMapping("/blog/{id}/remove")
-    public String blogPostDelete(@PathVariable(value = "id") long postId, Model model){
+    public String blogPostDelete(@PathVariable(value = "id") long postId, Model model) {
         Post post = postRepo.findById(postId).orElseThrow();
         postRepo.delete(post);
 
@@ -92,6 +92,3 @@ public class BlogController {
     }
 
 }
-//todo прочитать про паттерн DTO
-//todo прочитать про паттерн facade
-//todo кастомизация ошибок

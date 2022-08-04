@@ -29,19 +29,21 @@ public class PostServiceImpl implements PostService {
     PostMapper postMapper;
 
     @Override
-    public boolean postByIdIsPresent(Long postId) {
+    public boolean postByIdIsPresent (Long postId) {
         return repository.existsById(postId);
     }
 
     @Override
-    public PostDTO getPostDtoById(Long postId) throws Exception {
-        Optional<Post> optionalPost = repository.findById(postId);
-        if (optionalPost.isPresent()) {
-            Post post = optionalPost.get();
-            PostDTO postDTO = postMapper.entityToDto(post);
-            return postDTO;
-        } else {
-            throw new Exception("post by id not found");
-        }
+    public PostDTO getPostDtoById (Long postId) throws Exception {
+        Post post = repository.getById(postId);
+        return postMapper.entityToDto(post);
+
+//        Optional<Post> optionalPost = repository.findById(postId);
+//        if (optionalPost.isPresent()) {
+//            Post post = optionalPost.get();
+//            return postMapper.entityToDto(post);
+//        } else {
+//            throw new Exception("post by id not found");
+//        }
     }
 }

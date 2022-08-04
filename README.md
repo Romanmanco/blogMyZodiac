@@ -4,8 +4,8 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Here+i+learning+how+to+make+web-blog)](https://git.io/typing-svg)
 
-В данном проекте я содал мини-блог посвященный тематике гороскопа.
+В данном проекте я создал мини-блог посвященный тематике гороскопа.
 
-Cервис в котором представлена работа с базой данных, взаимодействие MVC. Проект создан в цчебных целях.
+Cервис в котором представлена работа с базой данных, взаимодействие MVC. Проект создан в учебных целях.
 
-Стек технологий: spring boot, maven, hibernate, postgresql.
+Стек технологий: spring boot, maven, hibernate, postgresql, lombok.

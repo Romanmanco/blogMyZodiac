@@ -1,8 +1,8 @@
 package com.myZodiac.blogMyZodiac.controllers;
 
-import com.myZodiac.blogMyZodiac.model.Post;
+import com.myZodiac.blogMyZodiac.model.entity.Post;
 import com.myZodiac.blogMyZodiac.repo.PostRepo;
-import com.myZodiac.blogMyZodiac.service.PostService;
+import com.myZodiac.blogMyZodiac.service.impl.PostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * @author Roman Manko
+ * @version 1.1
+ */
 
 @Controller
 public class BlogController {
@@ -22,14 +25,12 @@ public class BlogController {
     private PostRepo postRepo;
 
     @Autowired
-    private PostService postService;
+    private PostServiceImpl postServiceImpl;
 
     @GetMapping("/blog")
     public String blog(Model model) {
         Iterable<Post> posts = postRepo.findAll();
-        //добавили коллекцию в модель
         model.addAttribute("posts", posts);
-        //отправили модель и вью в браузер
         return "blogMain";
     }
 
@@ -42,7 +43,7 @@ public class BlogController {
     public String blogPostAdd(@RequestParam String title,
                               @RequestParam String anons,
                               @RequestParam String fullText,
-                              Model model){
+                              Model model) {
         Post post = new Post(title, anons, fullText);
         postRepo.save(post);
         return "redirect:/blog";
@@ -50,7 +51,7 @@ public class BlogController {
 
     @GetMapping("/blog/{id}")
     public String blogDetails(@PathVariable(value = "id") long postId, Model model) {
-        if(!postRepo.existsById(postId)){
+        if (!postRepo.existsById(postId)) {
             return "redirect:/blog";
         }
         Optional<Post> postOpt = postRepo.findById(postId);
@@ -61,10 +62,10 @@ public class BlogController {
 
     @GetMapping("/blog/{id}/edit")
     public String blogEdit(@PathVariable(value = "id") long postId, Model model) throws Exception {
-        if (!postService.postByIdIsPresent(postId)) {
+        if (!postServiceImpl.postByIdIsPresent(postId)) {
             return "redirect:/blog";
         }
-        model.addAttribute("post", postService.getPostDtoById(postId));
+        model.addAttribute("post", postServiceImpl.getPostDtoById(postId));
         return "blogEdit";
     }
 
@@ -90,5 +91,4 @@ public class BlogController {
 
         return "redirect:/blog";
     }
-
 }

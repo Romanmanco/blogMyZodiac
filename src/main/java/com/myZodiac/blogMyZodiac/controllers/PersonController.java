@@ -1,6 +1,6 @@
 package com.myZodiac.blogMyZodiac.controllers;
 
-import com.myZodiac.blogMyZodiac.model.Person;
+import com.myZodiac.blogMyZodiac.model.entity.Person;
 import com.myZodiac.blogMyZodiac.repo.PersonRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+/**
+ * @author Roman Manko
+ * @version 1.1
+ */
+
 @Controller
 public class PersonController {
 
@@ -18,29 +23,24 @@ public class PersonController {
     PersonRepo personRepo;
 
     @GetMapping("/profilePage")
-    public String profilePage (Model model){
+    public String profilePage(Model model) {
         return "/profilePage";
     }
 
     @GetMapping("/getPersons")
     public String getPersons() {
-        //возвращает шаблон страницы firstExample.html из папки resources/templates
         return "firstLesson/firstExample";
     }
 
     @GetMapping("/addPersonView")
     public String addPersonsView() {
-        //отправляем страницу с формой. Без модели
         return "jpa/addPersonView";
     }
 
     @GetMapping("/persons")
     public String getPersonTable(Model model) {
-        //получили все записи из таблицы Person и положили в коллекцию
         List<Person> personList = personRepo.findAll();
-        //добавили коллекцию в модель
         model.addAttribute("person", personList);
-        //отправили модель и вью в браузер
         return "jpa/persons";
     }
 
@@ -51,15 +51,8 @@ public class PersonController {
                              @RequestParam String emailParam,
                              @RequestParam String addressParam,
                              Model model) {
-        //получили параметры, которые нам отправил браузер
-        //заполнили этими параметрами обьект Person
-        Person person = new Person(firstNameParam,lastNameParam,loginParam,emailParam,addressParam);
-        //сохранили обьект Person в базу данных
+        Person person = new Person(firstNameParam, lastNameParam, loginParam, emailParam, addressParam);
         personRepo.save(person);
         return "redirect:/viewGoroskopPage";
-
-        //получили из базы данных(таблица Person) все записи и положили их в модель
-//        model.addAttribute("person", personRepo.findAll());
-//        return "jpa/persons";
     }
 }

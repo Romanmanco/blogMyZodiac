@@ -1,6 +1,6 @@
 package com.myZodiac.blogMyZodiac.controllers;
 
-import com.myZodiac.blogMyZodiac.model.Country;
+import com.myZodiac.blogMyZodiac.model.entity.Country;
 import com.myZodiac.blogMyZodiac.repo.CountryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+
+/**
+ * @author Roman Manko
+ * @version 1.1
+ */
 
 @Controller
 public class CountryController {
@@ -26,7 +31,7 @@ public class CountryController {
         return "countries";
     }
 
-    @PostMapping( "/addCountry")
+    @PostMapping("/addCountry")
     public String addCountry(@RequestParam String nameCountry,
                              Model model) {
         Country country = new Country(nameCountry);
@@ -34,8 +39,8 @@ public class CountryController {
         return "redirect:/viewGoroskopPage";
     }
 
-    @GetMapping( "/addCountryView")
-    public String addCountryView(Model model){
+    @GetMapping("/addCountryView")
+    public String addCountryView(Model model) {
         return "addCountryView";
     }
 }
